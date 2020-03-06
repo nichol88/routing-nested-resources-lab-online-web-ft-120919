@@ -612,3 +612,1404 @@ Processing by SongsController#show as HTML
   [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
   Rendered songs/show.html.erb within layouts/application (14.2ms)
 Completed 200 OK in 46ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+Started GET "/" for ::1 at 2020-03-06 01:27:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Brian/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Brian/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs" for ::1 at 2020-03-06 01:27:34 -0500
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 211ms (Views: 207.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists/1" for ::1 at 2020-03-06 01:27:40 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/3" for ::1 at 2020-03-06 01:27:51 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 3530ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/2" for ::1 at 2020-03-06 01:28:07 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 2]]
+  Rendered artists/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 01:28:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5553ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 01:30:58 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists/3" for ::1 at 2020-03-06 01:31:01 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 3]]
+  Rendered artists/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/4" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca52f98%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca52f98%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca52f98>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077a1178%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077a1178%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077a1178>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3a3660%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3a3660%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d3a3660>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3b9b68%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3b9b68%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d3b9b68>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3d0098%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3d0098%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d3d0098>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e02a550%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e02a550%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e02a550>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077b0ab0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077b0ab0%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077b0ab0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077e2f88%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077e2f88%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077e2f88>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca99498%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca99498%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca99498>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cabb980%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cabb980%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cabb980>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cad1e60%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cad1e60%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cad1e60>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20885c378%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20885c378%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20885c378>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb12870%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb12870%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb12870>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d428d88%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d428d88%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d428d88>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e06b280%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e06b280%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e06b280>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa208865798%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa208865798%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa208865798>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb2bc58%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb2bc58%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb2bc58>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb52178%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb52178%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb52178>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e088650%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e088650%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e088650>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb72b30%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e088650%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e088650>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb99398%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb99398%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb99398>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d463bb8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d463bb8%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d463bb8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cbba430%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cbba430%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cbba430>"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e818cd0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e818cd0%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e818cd0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cbe3498%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cbe3498%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cbe3498>"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0d1d00%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0d1d00%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0d1d00>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d478590%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d478590%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d478590>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e102db0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e102db0%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e102db0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205c38328%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205c38328%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205c38328>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2074e1ff0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2074e1ff0%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2074e1ff0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205d38750%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205d38750%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205d38750>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205e3bb70%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205e3bb70%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205e3bb70>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2064ba230%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2064ba230%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2064ba230>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2065b8cb8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2065b8cb8%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2065b8cb8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2066c3400%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2066c3400%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2066c3400>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2067b9ff8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2067b9ff8%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2067b9ff8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20a07c818%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20a07c818%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20a07c818>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f23718%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f23718%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205f23718>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f88d98%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f88d98%3E" for ::1 at 2020-03-06 01:31:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205f88d98>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d000d50%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e088650%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e088650>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0701a0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0701a0%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d0701a0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0e8fd8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0e8fd8%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d0e8fd8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1637d8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1637d8%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d1637d8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c859458%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c859458%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c859458>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2075db028%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2075db028%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2075db028>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206ed4b80%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206ed4b80%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206ed4b80>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f14140%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f14140%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206f14140>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c87b6c0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c87b6c0%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c87b6c0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8b34a8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8b34a8%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c8b34a8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8d93d8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8d93d8%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c8d93d8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c90bbd0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c90bbd0%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c90bbd0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c932438%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c932438%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c932438>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1b8440%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1b8440%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d1b8440>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1f69c0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1f69c0%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d1f69c0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d21f190%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d21f190%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d21f190>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f501b8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f501b8%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206f501b8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c951e78%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c951e78%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c951e78>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c978488%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c978488%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c978488>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c992b58%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c992b58%3E" for ::1 at 2020-03-06 01:31:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c992b58>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9b07e8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3" for ::1 at 2020-03-06 01:37:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 3]]
+  Rendered artists/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/4" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d291920%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d291920%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d291920>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d2c3df8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d2c3df8%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d2c3df8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9f22b0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9f22b0%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c9f22b0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f9be88%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f9be88%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206f9be88>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d2e98a0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d2e98a0%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d2e98a0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20763bc20%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20763bc20%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20763bc20>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207652c68%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207652c68%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa207652c68>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207681130%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207681130%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa207681130>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2076bb1f0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2076bb1f0%3E" for ::1 at 2020-03-06 01:37:46 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2076bb1f0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fa1798%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fa1798%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206fa1798>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d329d10%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d329d10%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d329d10>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20771afb0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20771afb0%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20771afb0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20774aaa8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20774aaa8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20774aaa8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fa9380%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fa9380%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206fa9380>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fd1830%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206fd1830%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206fd1830>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20778b698%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20778b698%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20778b698>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca093c0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca093c0%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca093c0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca397c8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca397c8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca397c8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d363178%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d363178%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d363178>"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207799248%3E
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d363178%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d363178>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3836d0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3836d0%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d3836d0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca79f30%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca79f30%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca79f30>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e008720%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e008720%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e008720>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e01afd8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e01afd8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e01afd8>"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3f17e8%3E
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d3f17e8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d3f17e8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077a8068%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077a8068%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077a8068>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077d2908%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077d2908%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077d2908>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca89110%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20ca89110%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20ca89110>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d403998%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d403998%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d403998>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e052140%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e052140%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e052140>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cae89a8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cae89a8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cae89a8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb03258%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb03258%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb03258>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d421a38%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d421a38%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d421a38>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077f02c8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2077f02c8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2077f02c8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20802ab00%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20802ab00%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20802ab00>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e079358%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e079358%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e079358>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb43bc8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb43bc8%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20cb43bc8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa208032418%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa208032418%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa208032418>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0a0c50%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0a0c50%3E" for ::1 at 2020-03-06 01:37:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0a0c50>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20cb8b478%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/5" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"5"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e80a2c0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e80a2c0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e80a2c0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20886c7c8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20886c7c8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20886c7c8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0b2ce8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0b2ce8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0b2ce8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e8211c8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e8211c8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e8211c8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0c36b0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0c36b0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0c36b0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0d9b68%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0d9b68%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0d9b68>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0f24d8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20e0f24d8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20e0f24d8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206af5ed8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206af5ed8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206af5ed8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2074c36b8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2074c36b8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2074c36b8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205d1c938%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205d1c938%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205d1c938>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205e19f98%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205e19f98%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205e19f98>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2064a34b8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2064a34b8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2064a34b8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2065a07d0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2065a07d0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2065a07d0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2066a9b68%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2066a9b68%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2066a9b68>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2067ab908%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2067ab908%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2067ab908>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20a06cdf0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20a06cdf0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20a06cdf0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f1a280%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f1a280%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205f1a280>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f8b8b8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa205f8b8b8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa205f8b8b8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d002bc8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d002bc8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d002bc8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0722e8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d002bc8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d002bc8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0ea5b8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d0ea5b8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d0ea5b8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d158928%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d158928%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d158928>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c85aa10%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c85aa10%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c85aa10>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2075db8c0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa2075db8c0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa2075db8c0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206ed56e8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206ed56e8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206ed56e8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f14cd0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f14cd0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206f14cd0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c870270%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c870270%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c870270>"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8b3f98%3E
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8b3f98%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c8b3f98>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8da0d0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c8da0d0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c8da0d0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9004d8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9004d8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c9004d8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c932cd0%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c932cd0%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c932cd0>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1b8d50%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1b8d50%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d1b8d50>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1f72a8%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d1f72a8%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d1f72a8>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d21fa28%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20d21fa28%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20d21fa28>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f50a78%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa206f50a78%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa206f50a78>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c952710%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c952710%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c952710>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c978d20%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c978d20%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c978d20>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c993418%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c993418%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c993418>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9b1080%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa20c9b1080%3E" for ::1 at 2020-03-06 01:38:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"#<Song::ActiveRecord_Relation:0x00007fa20c9b1080>"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists/3/songs/%23%3CSong::ActiveRecord_Relation:0x00007fa207613310%3E
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 2]]
+Started GET "/artists/3" for ::1 at 2020-03-06 03:45:02 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 3]]
+  Rendered artists/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/artists/3/songs/4" for ::1 at 2020-03-06 03:45:03 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"4"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/3" for ::1 at 2020-03-06 03:45:05 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 3]]
+  Rendered artists/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/3/songs/4" for ::1 at 2020-03-06 03:45:06 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"3", "id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 03:45:07 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 03:45:08 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for ::1 at 2020-03-06 03:45:12 -0500
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/8" for ::1 at 2020-03-06 03:45:14 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/songs" for ::1 at 2020-03-06 03:45:21 -0500
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/4" for ::1 at 2020-03-06 03:45:23 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 4]]
+  Rendered artists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/4/songs/7" for ::1 at 2020-03-06 03:45:25 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"4", "id"=>"7"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/4" for ::1 at 2020-03-06 03:45:28 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 4]]
+  Rendered artists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 03:45:44 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for ::1 at 2020-03-06 04:02:15 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artists/1/songs" for ::1 at 2020-03-06 04:06:26 -0500
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists" for ::1 at 2020-03-06 04:06:26 -0500
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/artists/1" for ::1 at 2020-03-06 04:06:36 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
